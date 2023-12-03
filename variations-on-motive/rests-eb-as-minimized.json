@@ -1,0 +1,178 @@
+{
+  "score-partwise": {
+    "part-list": {
+      "score-part": [
+        {
+          "part-name": "Piano",
+          "voiceMapping": {
+            "0": [
+              0
+            ]
+          },
+          "staffMapping": [
+            {
+              "mainVoiceIdx": 0,
+              "voices": [
+                0
+              ],
+              "staffUuid": "b0488968-8d76-cf6a-5241-8fef322f953b"
+            }
+          ],
+          "voiceIdxToUuidMapping": {
+            "0": "739c33b9-96b5-8550-ed33-6e8ac0d37883"
+          },
+          "voiceUuidToIdxMapping": {
+            "739c33b9-96b5-8550-ed33-6e8ac0d37883": 0
+          },
+          "part-abbreviation": "Pno.",
+          "score-instrument": {
+            "instrument-name": "Piano",
+            "$id": "P1-I1"
+          },
+          "midi-instrument": {
+            "midi-program": 1,
+            "volume": "100",
+            "$id": "P1-I1",
+            "midi-channel": "1"
+          },
+          "$id": "P1",
+          "uuid": "de8e821c-db51-9d75-a7be-248a83d3345c"
+        }
+      ]
+    },
+    "part": [
+      {
+        "measure": [
+          {
+            "note": [
+              {
+                "rest": {},
+                "voice": "1",
+                "staff": "1",
+                "duration": "2",
+                "$adagio-location": {
+                  "timePos": 0
+                },
+                "type": "quarter"
+              },
+              {
+                "rest": {},
+                "voice": "1",
+                "staff": "1",
+                "duration": "2",
+                "$adagio-location": {
+                  "timePos": 2
+                },
+                "type": "quarter"
+              },
+              {
+                "rest": {},
+                "voice": "1",
+                "staff": "1",
+                "duration": "2",
+                "$adagio-location": {
+                  "timePos": 4
+                },
+                "type": "quarter"
+              },
+              {
+                "rest": {},
+                "voice": "1",
+                "staff": "1",
+                "duration": "2",
+                "$adagio-location": {
+                  "timePos": 6
+                },
+                "type": "quarter"
+              }
+            ],
+            "harmony": [],
+            "$number": "1",
+            "barline": {
+              "$location": "right",
+              "bar-style": "light-heavy",
+              "$adagio-location": {
+                "dpq": 2,
+                "timePos": 8
+              },
+              "noteBefore": 3
+            },
+            "attributes": [
+              {
+                "divisions": "2",
+                "time": {
+                  "beats": "4",
+                  "beat-type": "4"
+                },
+                "clef": {
+                  "sign": "G",
+                  "line": "2"
+                },
+                "key": {
+                  "fifths": "-3"
+                },
+                "staff-details": {
+                  "staff-lines": "5"
+                },
+                "$adagio-time": {
+                  "beats": "4",
+                  "beat-type": "4"
+                },
+                "noteBefore": -1,
+                "$adagio-location": {
+                  "timePos": 0,
+                  "dpq": 1
+                }
+              }
+            ],
+            "sound": [
+              {
+                "$adagio-swing": {
+                  "swing": false
+                },
+                "noteBefore": -1,
+                "$adagio-location": {
+                  "timePos": 0,
+                  "dpq": 2
+                }
+              },
+              {
+                "$tempo": "80",
+                "noteBefore": -1,
+                "$adagio-location": {
+                  "timePos": 0,
+                  "dpq": 2
+                }
+              }
+            ],
+            "direction": [
+              {
+                "$placement": "above",
+                "staff": "1",
+                "$adagio-location": {
+                  "timePos": 0
+                },
+                "direction-type": {
+                  "metronome": {
+                    "per-minute": "80",
+                    "beat-unit": "quarter"
+                  }
+                },
+                "noteBefore": -1,
+                "$adagio-isFirst": true
+              }
+            ],
+            "$adagio-beatsList": [
+              1,
+              1,
+              1,
+              1
+            ]
+          }
+        ],
+        "$id": "P1",
+        "uuid": "de8e821c-db51-9d75-a7be-248a83d3345c"
+      }
+    ]
+  }
+}

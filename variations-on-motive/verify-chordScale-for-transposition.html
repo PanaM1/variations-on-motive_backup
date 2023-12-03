@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>8 transpositions of the chord scale buckets</title>
+</head>
+
+<body>
+  <article id="alto-clef">
+    <div class="melody"></div>
+    <section class="tonic">
+      <output class="pitches"></output>
+      <div class="score"></div>
+    </section>
+    <section class="subdominant">
+      <output class="pitches"></output>
+      <div class="score"></div>
+    </section>
+    <section class="dominant">
+      <output class="pitches"></output>
+      <div class="score"></div>
+    </section>
+  </article>
+  <article id="bb">
+    <div class="melody"></div>
+    <section class="tonic">
+      <output class="pitches"></output>
+      <div class="score"></div>
+    </section>
+    <section class="subdominant">
+      <output class="pitches"></output>
+      <div class="score"></div>
+    </section>
+    <section class="dominant">
+      <output class="pitches"></output>
+      <div class="score"></div>
+    </section>
+  </article>
+  <article id="concert-pitch-bc">
+    <div class="melody"></div>
+    <section class="tonic">
+      <output class="pitches"></output>
+      <div class="score"></div>
+    </section>
+    <section class="subdominant">
+      <output class="pitches"></output>
+      <div class="score"></div>
+    </section>
+    <section class="dominant">
+      <output class="pitches"></output>
+      <div class="score"></div>
+    </section>
+  </article>
+  <article id="concert-pitch-bc-8vb">
+    <div class="melody"></div>
+    <section class="tonic">
+      <output class="pitches"></output>
+      <div class="score"></div>
+    </section>
+    <section class="subdominant">
+      <output class="pitches"></output>
+      <div class="score"></div>
+    </section>
+    <section class="dominant">
+      <output class="pitches"></output>
+      <div class="score"></div>
+    </section>
+  </article>
+  <article id="concert-pitch-tc">
+    <div class="melody"></div>
+    <section class="tonic">
+      <output class="pitches"></output>
+      <div class="score"></div>
+    </section>
+    <section class="subdominant">
+      <output class="pitches"></output>
+      <div class="score"></div>
+    </section>
+    <section class="dominant">
+      <output class="pitches"></output>
+      <div class="score"></div>
+    </section>
+  </article>
+  <article id="concert-pitch-tc-8va">
+    <div class="melody"></div>
+    <section class="tonic">
+      <output class="pitches"></output>
+      <div class="score"></div>
+    </section>
+    <section class="subdominant">
+      <output class="pitches"></output>
+      <div class="score"></div>
+    </section>
+    <section class="dominant">
+      <output class="pitches"></output>
+      <div class="score"></div>
+    </section>
+  </article>
+  <article id="eb">
+    <div class="melody"></div>
+    <section class="tonic">
+      <output class="pitches"></output>
+      <div class="score"></div>
+    </section>
+    <section class="subdominant">
+      <output class="pitches"></output>
+      <div class="score"></div>
+    </section>
+    <section class="dominant">
+      <output class="pitches"></output>
+      <div class="score"></div>
+    </section>
+  </article>
+  <article id="f">
+    <div class="melody"></div>
+    <section class="tonic">
+      <output class="pitches"></output>
+      <div class="score"></div>
+    </section>
+    <section class="subdominant">
+      <output class="pitches"></output>
+      <div class="score"></div>
+    </section>
+    <section class="dominant">
+      <output class="pitches"></output>
+      <div class="score"></div>
+    </section>
+  </article>
+  <script src="https://prod.flat-cdn.com/embed-js/v1.5.1/embed.min.js"></script>
+  <script src="thick.js"></script>
+  <script>
+    async function main() {
+      // load the scores from json
+      const d = await (await fetch('beg-band.json')).json()
+      console.table(d)
+      
+      // const subArray = d.scores.slice(0,1) // alto clef on its own looks good
+      // const subArray = d.scores.slice(1,2) // bb
+      // "concert-pitch-bc"
+      // "concert-pitch-bc-8vb"
+      // "concert-pitch-tc"
+      // "concert-pitch-tc-8va"
+      // "eb"
+      // "f"
+
+      // const subArray = d.scores.slice(0,2) // alto clef  and bb //this was fine on its own
+      // const subArray = d.scores.slice(0,3) // alto clef and bb and concert-pitch-bc //this worked fine with the for loop in place of the map
+      const subArray = d.scores // 8 transpositions
+
+      const data = {...d, scores: subArray}
+
+      // for each score in loadedData.scores
+      //    construct a flat (not editable)embed object and give it the #transposition>.melody elem for its container
+      //    construct a blank (not editable) flat io embed object 
+      
+      for (const scoreObj of data.scores){
+        console.log('data.scores', data.scores)
+        console.log('scoreObj', scoreObj)
+        const scaleDegreeElems= {
+          tonic: document.querySelector(`#${scoreObj.transposition}>.tonic>.pitches`),
+          subdominant: document.querySelector(`#${scoreObj.transposition}>.subdominant>.pitches`),
+          dominant: document.querySelector(`#${scoreObj.transposition}>.dominant>.pitches`),
+        }
+
+
+        const melodyElem = `#${scoreObj.transposition}>.melody`
+        console.log(melodyElem)
+        const tonicElem = `#${scoreObj.transposition}>.tonic>.score`
+        console.log(tonicElem)
+        const subdominantElem = `#${scoreObj.transposition}>.subdominant>.score`
+        const dominantElem = `#${scoreObj.transposition}>.dominant>.score`
+        const container = document.querySelector(melodyElem);
+        const embed = new Flat.Embed(container, {
+          "width": "100%",
+          "height": "300",
+          "score": scoreObj.scoreId,
+          "embedParams": {
+            "branding": false,
+            "controlsPlay": false,
+            "appId": appId,
+            "sharingKey": scoreObj.sharingKey
+          }
+        })
+
+
+        const tonicContainer = document.querySelector(tonicElem);
+        const tonicEmbed = new Flat.Embed(tonicContainer, {
+          "width": "100%",
+          "height": "300",
+          "score": 'blank',
+          "embedParams": {
+            "branding": false,
+            "controlsPlay": false,
+            "appId": appId,
+          }
+        })
+
+        const subdominantContainer = document.querySelector(subdominantElem);
+        const subdominantEmbed = new Flat.Embed(subdominantContainer, {
+          "width": "100%",
+          "height": "300",
+          "score": 'blank',
+          "embedParams": {
+            "branding": false,
+            "controlsPlay": false,
+            "appId": appId,
+          }
+        })
+
+        const dominantContainer = document.querySelector(dominantElem);
+        const dominantEmbed = new Flat.Embed(dominantContainer, {
+          "width": "100%",
+          "height": "300",
+          "score": 'blank',
+          "embedParams": {
+            "branding": false,
+            "controlsPlay": false,
+            "appId": appId,
+          }
+        })
+        await refToChordScaleBuckets(embed, tonicEmbed, subdominantEmbed, dominantEmbed, scaleDegreeElems, "Matt")
+        // refToChordScaleBuckets(embed, tonicEmbed, subdominantEmbed, dominantEmbed, scaleDegreeElems, "Matt") //FIXME this one breaks!
+        
+        console.log('scoreObj')
+        console.log(scoreObj)
+        for (const [key, value] of Object.entries(scaleDegreeElems)) {
+          console.log(`${key}: ${value.innerText}`);
+        }
+        // .forEach((elem)=>console.log(elem.innerText))
+        tonicEmbed.getJSON().then(j=>console.log(scoreObj,'tonic', getNotePitches(j)))
+        subdominantEmbed.getJSON().then(j=>console.log(scoreObj,'subdominant', getNotePitches(j)))
+        dominantEmbed.getJSON().then(j=>console.log(scoreObj,'dominant', getNotePitches(j)))
+        // return { embed, tonicEmbed, subdominantEmbed, dominantEmbed }
+      }
+
+      // scoreEmbeds.map((score)=>{
+      //   refToChordScaleBuckets()
+      // })
+       //  refEmbed,
+      //   tonicEmbed,
+      //   subdominantEmbed,
+      //   dominantEmbed,
+      //   scaleDegreeElems,
+      //   instrName,
+      //   octaveShift = 0
+
+      //            and then tell the flatembed object to load that data
+    }
+    function getNotePitches(scoreJSON) {
+      return scoreJSON['score-partwise'].part[0].measure[0].note.reduce((acc,note) => {
+        return acc+`oct:${note.pitch.octave},step:${note.pitch.step},alt:${note.pitch.alter}`
+      },'')
+    }
+    main()
+  </script>
+</body>
+
+</html>

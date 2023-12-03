@@ -1,0 +1,367 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Unit Test </title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+  <link rel="icon" href="https://fav.farm/🙏">
+</head>
+
+<body class="container">
+  <h1>Unit Test NEA Create</h1>
+  <p>This is a small example to help ensure that the NEA Create experiences are being implemented correctly to the
+    designs. Ideally, we can store the "chord scale buckets" (<code>tonic</code>, <code>dominant</code>, and
+    <code>subdominant</code> as <a href="#chord-scale-buckets">defined below</a>) using only 3 flat.io scores for a
+    single key signature.
+  </p>
+
+  <main>
+    <h2>Tests</h2>
+    <p>Our tests will work with 2 <strong>pieces</strong> of repertoire: <a target="_blank" rel="noopener noreferrrer"
+        href="https://benguerrero.com/">Ben Guerrero's</a> simplifications of <a href="https://www.stevedanyew.com/"
+        target="_blank" rel="noopener noreferrrer">Steve Danyew's</a> arrangements of <em>Deep River</em> and <em>Down
+        by the Riverside</em>. For each of these pieces, we will consider 2 students, <code>Ayesha</code> who plays a
+      <code>piccolo</code> and <code>Bazual</code> who plays a (B♭) <code>trumpet</code>
+    </p>
+    <ol>
+      <li>
+        <h3>Down by the Riverside (in A♭)</h3>
+        <div id="dbtrs-piccolo"></div>
+        <ol>
+          <li>
+            <h4>Ayesha (on Piccolo)</h4>
+            <p>To perform the melody she would use the score above.</p>
+            <h5>Score for Create</h5>
+            <p>To compose for any of the Create conditions (for this piece), Ayesha will be given this kind of score.
+            </p>
+            <div id="dbtrs-piccolo-create"></div>
+            <h5>Chord Scale Buckets</h5>
+            <p>Ayseha's instrument is considered Concert Pitch, but within MusicCPR, we further denote that it's
+              <code>Concert Pitch TC 8va</code>, which means an octave higher than other <code>Concert Pitch TC</code>
+              instruments (e.g. Oboe, Percussion, Piano). Below are the chord scale buckets to which Ayesha will be
+              asked to limit herself. The pitches here depend on (1) the fact that her instrument is concert pitch (not
+              transposed from concert pitch to another), (2) the fact that the piece is composed in (for?)
+              <code>A♭</code>.
+            </p>
+            <h6>Tonic</h6>
+            <div id="tonic-dbtrs-scale-degrees"></div>
+            <div id="tonic-dbtrs"></div>
+            <h6>Subdominant</h6>
+            <div id="subdominant-dbtrs-scale-degrees"></div>
+            <div id="subdominant-dbtrs"></div>
+            <h6>Dominant</h6>
+            <div id="dominant-dbtrs-scale-degrees"></div>
+            <div id="dominant-dbtrs"></div>
+          </li>
+          <li>
+            <h4>Bazual (on Trumpet)</h4>
+            <p>To perform the melody they would use this B♭ version of Down by the Riverside.</p>
+            <div id="dbtrs-bb"></div>
+            <h5>Score for Create</h5>
+            <p>To compose for any of the Create conditions (for this piece), Bazual will be given this kind of score.
+              (bc their instrument is considered a Bb instrument, we reference the "conference pitch transposition
+              chart" and see that for a piece whose concert pitch key is Ab, they will be given a score in Bb)
+            </p>
+            <div id="dbtrs-bb-create"></div>
+            <h5>Chord Scale Buckets</h5>
+            <p>These are the chord scale buckets to which Bazual will be asked to limit themself</p>
+            <h6>Tonic</h6>
+            <div id="tonic-dbtrs-bb-scale-degrees"></div>
+            <div id="tonic-dbtrs-bb"></div>
+            <h6>Subdominant</h6>
+            <div id="subdominant-dbtrs-bb-scale-degrees"></div>
+            <div id="subdominant-dbtrs-bb"></div>
+            <h6>Dominant</h6>
+            <div id="dominant-dbtrs-bb-scale-degrees"></div>
+            <div id="dominant-dbtrs-bb"></div>
+          </li>
+        </ol>
+      </li>
+    </ol>
+  </main>
+  <section>
+    <h2>Vocabulary</h2>
+    <section>
+      <h3>Chromatic Scale</h3>
+      <p>The chromatic scale as defined here lists the 12 semitones in order from lowest to highest for a single octave.
+        Note: 5 of the 12 semitones have 2 representations: 1 that's a lower "note letter" that uses a "sharp"
+        (<code>♯</code>) and one that's a higher "note letter" that uses a "flat" (<code>♭</code>). To decide which is
+        the appropriate one to show/render, we should look at the piece of repertoire (well, particularly the
+        "transposition of the piece into the key appropriate for a given instrument") to tell whether the key signature
+        contains flats (in which case the flats are used) or not (in which case the sharps are used).</p>
+      <ol>
+        <li><code>C</code></li>
+        <li>
+          <ol>
+            <li><code>C♯</code></li>
+            <li><code>D♭</code></li>
+          </ol>
+        </li>
+        <li><code>D</code></li>
+        <li>
+          <ol>
+            <li><code>D♯</code></li>
+            <li><code>E♭</code></li>
+          </ol>
+        </li>
+        <li><code>E</code></li>
+        <li><code>F</code></li>
+        <li>
+          <ol>
+            <li><code>F♯</code></li>
+            <li><code>G♭</code></li>
+          </ol>
+        </li>
+        <li><code>G</code></li>
+        <li>
+          <ol>
+            <li><code>G♯</code></li>
+            <li><code>A♭</code></li>
+          </ol>
+        </li>
+        <li><code>A</code></li>
+        <li>
+          <ol>
+            <li><code>A♯</code></li>
+            <li><code>B♭</code></li>
+          </ol>
+        </li>
+        <li><code>B</code></li>
+      </ol>
+    </section>
+    <section id="chord-scale-buckets">
+      <h3>Chord Scale Buckets</h3>
+      <p>The chord scale buckets below are for the key of E flat (<code>Eb</code>). The <code>scale degrees</code> are
+        the pitches for a certain chord scale bucket in a given key. Note: all of these chord scale buckets span 2
+        octaves since C is the lowest "note letter" ("pitch"?) in a given octave.</p>
+      <dl>
+        <dt>tonic</dt>
+        <dd>Eb, F, G, Bb, C</dd>
+        <dt>subdominant</dt>
+        <dd>F, Ab, Bb, C, Eb</dd>
+        <dt>dominant</dt>
+        <dd>D, F, Ab, Bb, C</dd>
+      </dl>
+    </section>
+  </section>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz"
+    crossorigin="anonymous"></script>
+  <script src="https://prod.flat-cdn.com/embed-js/v1.5.1/embed.min.js"></script>
+  <script src="thick.js"></script>
+  <script>
+
+
+    const downByTheRiversideConcert = {
+      scoreId: '62ec10e691d8e600128cd955', //this turns out to be Ab
+      sharingKey: 'aba8bcb1c46c842bbab275790b1d7297ec514ee670a5794067e6cf8db4014053ac784334edcaf473d7df2599996e60ba351741de977e1c33d1004531f243d205'
+    }
+
+    const downByTheRiversideBb = {
+      scoreId: '62ec10e6d761f20012ce1b2f', //this ends up as Bb
+      sharingKey: '0e02133ac03e0c10401a5cc48096b8c31e94246a0e1e7847f2336a1a950bf488dd0013d05af7f2c9cf40aca41bf36be17d872a01746c90de4249f39ca36f7b12'
+    }
+
+
+    const tonicDbtrsScaleDegrees = document.getElementById('tonic-dbtrs-scale-degrees')
+    const subdominantDbtrsScaleDegrees = document.getElementById('subdominant-dbtrs-scale-degrees')
+    const dominantDbtrsScaleDegrees = document.getElementById('dominant-dbtrs-scale-degrees')
+    const tonicDbtrsBbScaleDegrees = document.getElementById('tonic-dbtrs-bb-scale-degrees')
+    const subdominantDbtrsBbScaleDegrees = document.getElementById('subdominant-dbtrs-bb-scale-degrees')
+    const dominantDbtrsBbScaleDegrees = document.getElementById('dominant-dbtrs-bb-scale-degrees')
+
+    const dbtrsAbContainer = document.getElementById("dbtrs-piccolo");
+    const dbtrsAbEmbed = new Flat.Embed(dbtrsAbContainer, {
+      "width": "100%",
+      "height": "300",
+      "score": downByTheRiversideConcert.scoreId,
+      "embedParams": {
+        "branding": false,
+        "controlsPlay": false,
+        "appId": appId,
+        "sharingKey": downByTheRiversideConcert.sharingKey
+      },
+    });
+
+
+
+    const dbtrsAbCreateContainer = document.getElementById("dbtrs-piccolo-create");
+    const dbtrsAbCreateEmbed = new Flat.Embed(dbtrsAbCreateContainer, {
+      "width": "100%",
+      "height": "300",
+      "score": downByTheRiversideConcert.scoreId,
+      "embedParams": {
+        "mode": "edit",
+        "toolsetId": NEA_CREATE_TOOLSET_ID,
+        "branding": false,
+        "controlsPlay": false,
+        "appId": appId,
+        "sharingKey": downByTheRiversideConcert.sharingKey
+      },
+    });
+
+    //adding this in results in a js error, but seemingly one not caught by the catch??
+    // Uncaught (in promise) TypeError: can't access property "appendChild", this.$refs.pages is null
+    dbtrsAbCreateEmbed.ready()
+      .then(() => {
+        return new Promise((res) => setTimeout(() => res(true), 1000));
+      })
+      .then(() => {
+        // should just replace all pitches with rests? is that the right number of measures already?
+        return dbtrsAbCreateEmbed.getJSON();
+      })
+      .then(pitchesToRests)
+      .then((composeScoreJSON) => {
+        return dbtrsAbCreateEmbed.loadJSON(composeScoreJSON)
+      })
+      .catch((err) => {
+        console.error('err in preparing dbtrsAbCreateEmbed', err)
+      })
+
+
+    const dbtrsBbContainer = document.getElementById("dbtrs-bb");
+    const dbtrsBbEmbed = new Flat.Embed(dbtrsBbContainer, {
+      "width": "100%",
+      "height": "300",
+      "score": downByTheRiversideBb.scoreId,
+      "embedParams": {
+        "branding": false,
+        "controlsPlay": false,
+        "appId": appId,
+        "sharingKey": downByTheRiversideBb.sharingKey
+      },
+    });
+    const dbtrsBbCreateContainer = document.getElementById("dbtrs-bb-create");
+    const dbtrsBbCreateEmbed = new Flat.Embed(dbtrsBbCreateContainer, {
+      "width": "100%",
+      "height": "300",
+      "score": downByTheRiversideBb.scoreId,
+      "embedParams": {
+        "mode": "edit",
+        "toolsetId": NEA_CREATE_TOOLSET_ID,
+        "branding": false,
+        "controlsPlay": false,
+        "appId": appId,
+        "sharingKey": downByTheRiversideBb.sharingKey
+      },
+    });
+
+    //again, //adding this in results in a js error, but seemingly one not caught by the catch??
+    // Uncaught (in promise) TypeError: can't access property "appendChild", this.$refs.pages is null
+    dbtrsBbCreateEmbed.ready()
+      .then(() => {
+        return new Promise((res) => setTimeout(() => res(true), 1000));
+      })
+      .then(() => {
+        // should just replace all pitches with rests? is that the right number of measures already?
+        return dbtrsBbCreateEmbed.getJSON();
+      })
+      .then(pitchesToRests)
+      .then((composeScoreJSON) => {
+        return dbtrsBbCreateEmbed.loadJSON(composeScoreJSON)
+      })
+      .catch((err) => {
+        console.error('err in preparing dbtrsBbCreateEmbed', err)
+      })
+
+
+    const abTonicBucketContainer = document.getElementById("tonic-dbtrs");
+    const abTonicBucketEmbed = new Flat.Embed(abTonicBucketContainer, {
+      "width": "100%",
+      "height": "300",
+      "score": chordScaleBucketsInEb.tonic.scoreId,
+      "embedParams": {
+        "branding": false,
+        "controlsPlay": false,
+        "appId": appId,
+        "sharingKey": chordScaleBucketsInEb.tonic.sharingKey
+      },
+    });
+
+
+
+    const abSubdominantBucketContainer = document.getElementById("subdominant-dbtrs");
+    const abSubdominantBucketEmbed = new Flat.Embed(abSubdominantBucketContainer, {
+      "width": "100%",
+      "height": "300",
+      "score": chordScaleBucketsInEb.subdominant.scoreId,
+      "embedParams": {
+        "branding": false,
+        "controlsPlay": false,
+        "appId": appId,
+        "sharingKey": chordScaleBucketsInEb.subdominant.sharingKey
+      },
+    });
+
+    const abDominantBucketContainer = document.getElementById("dominant-dbtrs");
+    const abDominantBucketEmbed = new Flat.Embed(abDominantBucketContainer, {
+      "width": "100%",
+      "height": "300",
+      "score": chordScaleBucketsInEb.dominant.scoreId,
+      "embedParams": {
+        "branding": false,
+        "controlsPlay": false,
+        "appId": appId,
+        "sharingKey": chordScaleBucketsInEb.dominant.sharingKey
+      },
+    });
+
+    const bbTonicBucketContainerDBTRS = document.getElementById("tonic-dbtrs-bb");
+    const bbTonicBucketEmbedDBTRS = new Flat.Embed(bbTonicBucketContainerDBTRS, {
+      "width": "100%",
+      "height": "300",
+      "score": chordScaleBucketsInEb.tonic.scoreId,
+      "embedParams": {
+        "branding": false,
+        "controlsPlay": false,
+        "appId": appId,
+        "sharingKey": chordScaleBucketsInEb.tonic.sharingKey
+      },
+    });
+
+    const bbSubdominantBucketContainerDBTRS = document.getElementById("subdominant-dbtrs-bb");
+    const bbSubdominantBucketEmbedDBTRS = new Flat.Embed(bbSubdominantBucketContainerDBTRS, {
+      "width": "100%",
+      "height": "300",
+      "score": chordScaleBucketsInEb.subdominant.scoreId,
+      "embedParams": {
+        "branding": false,
+        "controlsPlay": false,
+        "appId": appId,
+        "sharingKey": chordScaleBucketsInEb.subdominant.sharingKey
+      },
+    });
+
+    const bbDominantBucketContainerDBTRS = document.getElementById("dominant-dbtrs-bb");
+    const bbDominantBucketEmbedDBTRS = new Flat.Embed(bbDominantBucketContainerDBTRS, {
+      "width": "100%",
+      "height": "300",
+      "score": chordScaleBucketsInEb.dominant.scoreId,
+      "embedParams": {
+        "branding": false,
+        "controlsPlay": false,
+        "appId": appId,
+        "sharingKey": chordScaleBucketsInEb.dominant.sharingKey
+      },
+    });
+
+    refToChordScaleBuckets(dbtrsAbEmbed, abTonicBucketEmbed, abSubdominantBucketEmbed, abDominantBucketEmbed, {
+        tonic: tonicDbtrsScaleDegrees,
+        subdominant: subdominantDbtrsScaleDegrees,
+        dominant: dominantDbtrsScaleDegrees
+      }, 'Piccolo', 1).then(()=>{
+        return refToChordScaleBuckets(dbtrsBbEmbed, bbTonicBucketEmbedDBTRS, bbSubdominantBucketEmbedDBTRS, bbDominantBucketEmbedDBTRS, {
+          tonic: tonicDbtrsBbScaleDegrees,
+          subdominant: subdominantDbtrsBbScaleDegrees,
+          dominant: dominantDbtrsBbScaleDegrees
+        }, 'Trumpet')
+      })
+    
+
+  </script>
+</body>
+
+</html>

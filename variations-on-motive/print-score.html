@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <div id="tonic"></div>
+  <div id="subdominant"></div>
+  <div id="dominant"></div>
+  <script src="https://prod.flat-cdn.com/embed-js/v1.5.1/embed.min.js"></script>
+  <script src="thick.js"></script>
+  <script>
+    const tonicElem = document.getElementById('tonic')
+    const subdominantElem = document.getElementById('subdominant')
+    const dominantElem = document.getElementById('dominant')
+
+    const tonicEmbed = new Flat.Embed(tonicElem, {
+      "width": "100%",
+      "height": "300",
+      "score": chordScaleBucketsInEb.tonic.scoreId,
+      "embedParams": {
+        "branding": false,
+        "controlsPlay": false,
+        "appId": appId,
+        "sharingKey": chordScaleBucketsInEb.tonic.sharingKey
+      },
+    });
+
+    const subdominantEmbed = new Flat.Embed(subdominantElem, {
+      "width": "100%",
+      "height": "300",
+      "score": chordScaleBucketsInEb.subdominant.scoreId,
+      "embedParams": {
+        "branding": false,
+        "controlsPlay": false,
+        "appId": appId,
+        "sharingKey": chordScaleBucketsInEb.subdominant.sharingKey
+      },
+    });
+
+    const dominantEmbed = new Flat.Embed(dominantElem, {
+      "width": "100%",
+      "height": "300",
+      "score": chordScaleBucketsInEb.dominant.scoreId,
+      "embedParams": {
+        "branding": false,
+        "controlsPlay": false,
+        "appId": appId,
+        "sharingKey": chordScaleBucketsInEb.dominant.sharingKey
+      },
+    });
+
+    tonicEmbed.ready().then(()=>{
+      tonicEmbed.getJSON().then(json=>{
+        console.log('tonicEmbed')
+        console.log(json)
+      })
+    })
+    subdominantEmbed.ready().then(()=>{
+      subdominantEmbed.getJSON().then(json=>{
+        console.log('subdominantEmbed')
+        console.log(json)
+      })
+    })
+    dominantEmbed.ready().then(()=>{
+      dominantEmbed.getJSON().then(json=>{
+        console.log('dominantEmbed')
+        console.log(json)
+      })
+    })
+  </script>
+</body>
+
+</html>

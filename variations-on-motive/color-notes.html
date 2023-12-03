@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Unit Test </title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+  <link rel="icon" href="https://fav.farm/👻">
+</head>
+
+<body class="container">
+  <div id="color-1"></div>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz"
+    crossorigin="anonymous"></script>
+  <script src="https://prod.flat-cdn.com/embed-js/v1.5.1/embed.min.js"></script>
+  <script src="thick.js"></script>
+  <script>
+    const scores = [
+      {
+        id: "color-1",
+        "scoreId": "64e80901cba6854d3f7ebc15",
+        "sharingKey": "671be769bdcb9a9c4cbdb1a00dcb2f5659a2f5d30a22568ffd691f42957b715575f7d2709c1ca0d63659f983ce114da3515410f9d1cda5b7947c7bab5255640f"
+      }
+    ]
+    const createEmbed = (containerElemId, scoreId, sharingKey) => {
+      const blankContainer = document.getElementById(containerElemId);
+      const blankEmbed = new Flat.Embed(blankContainer, {
+        "width": "100%",
+        "height": "300",
+        "score": scoreId,
+        "embedParams": {
+          "mode": "edit",
+          "toolsetId": NEA_CREATE_TOOLSET_ID,
+          "branding": false,
+          "controlsPlay": false,
+          "appId": appId,
+          "sharingKey": sharingKey
+        },
+      });
+      return blankEmbed.ready().then(() => blankEmbed)
+      // return {embed: blankEmbed, ready: blankEmbed.ready()};
+    };
+
+    const embeds = scores.map(({ id, scoreId, sharingKey }) => createEmbed(id, scoreId, sharingKey))
+    const scoreJSONs = Promise.all(embeds)
+        .then((es) => Promise.all(es.map((e) => e.getJSON())))
+      scoreJSONs.then(console.log)
+  </script>
+  </body>
+</html>

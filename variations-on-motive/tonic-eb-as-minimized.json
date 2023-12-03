@@ -1,0 +1,57 @@
+{
+  "score-partwise": {
+    "part-list": {
+      "score-part": [
+        {
+          "part-name": "",
+          "voiceMapping": { "0": [0] },
+          "staffMapping": [
+            {
+              "mainVoiceIdx": 0,
+              "voices": [0],
+              "staffUuid": "staffUuid"
+            }
+          ],
+          "voiceIdxToUuidMapping": {
+            "0": "voiceUuid"
+          },
+          "voiceUuidToIdxMapping": {
+            "voiceUuid": 0
+          },
+          "part-abbreviation": "",
+          "score-instrument": {
+            "instrument-name": "",
+            "$id": "P1-I1"
+          },
+
+          "$id": "P1",
+          "uuid": "P1"
+        }
+      ]
+    },
+    "part": [
+      {
+        "measure": [
+          {
+            "note": [],
+            "$number": "1",
+            "barline": {
+              "bar-style": "light-heavy",
+              "noteBefore": 4
+            },
+            "attributes": [
+              {
+                "time": { "beats": "5", "beat-type": "4" },
+                "clef": { "sign": "G", "line": "2" },
+                "key": { "fifths": "-3" },
+                "staff-details": { "staff-lines": "5" }
+              }
+            ]
+          }
+        ],
+        "$id": "P1",
+        "uuid": "P1"
+      }
+    ]
+  }
+}

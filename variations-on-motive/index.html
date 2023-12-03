@@ -1,0 +1,376 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Unit Test </title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+  <link rel="icon" href="https://fav.farm/🙏">
+</head>
+
+<body class="container">
+  <h1>Unit Test NEA Create</h1>
+  <p>This is a small example to help ensure that the NEA Create experiences are being implemented correctly to the
+    designs. Ideally, we can store the "chord scale buckets" (<code>tonic</code>, <code>dominant</code>, and
+    <code>subdominant</code> as <a href="#chord-scale-buckets">defined below</a>) using only 3 flat.io scores for a
+    single key signature.
+  </p>
+
+  <main>
+    <h2>Tests</h2>
+    <p>Our tests will work with 2 <strong>pieces</strong> of repertoire: <a target="_blank" rel="noopener noreferrrer"
+        href="https://benguerrero.com/">Ben Guerrero's</a> simplifications of <a href="https://www.stevedanyew.com/"
+        target="_blank" rel="noopener noreferrrer">Steve Danyew's</a> arrangements of <em>Deep River</em> and <em>Down
+        by the Riverside</em>. For each of these pieces, we will consider 2 students, <code>Ayesha</code> who plays a
+      <code>piccolo</code> and <code>Bazual</code> who plays a (B♭) <code>trumpet</code>
+    </p>
+    <ol>
+      <li>
+        <h3>Deep River (in E♭)</h3>
+        <div id="deep-river-piccolo"></div>
+        <ol>
+          <li>
+            <h4>Ayesha (on Piccolo)</h4>
+            <p>To perform the melody she would use the score above.</p>
+            <h5>Score for Create</h5>
+            <p>To compose for any of the Create conditions (for this piece), Ayesha will be given this kind of score.
+            </p>
+            <div id="deep-river-piccolo-create"></div>
+            <h5>Chord Scale Buckets</h5>
+            <p>Ayseha's instrument is considered Concert Pitch, but within MusicCPR, we further denote that it's
+              <code>Concert Pitch TC 8va</code>, which means an octave higher than other <code>Concert Pitch TC</code>
+              instruments (e.g. Oboe, Percussion, Piano). Below are the chord scale buckets to which Ayesha will be
+              asked to limit herself. The pitches here depend on (1) the fact that her instrument is concert pitch (not
+              transposed from concert pitch to another), (2) the fact that the piece is composed in (for?)
+              <code>E♭</code>.
+            </p>
+            <h6>Tonic</h6>
+            <div id="tonic-scale-degrees"></div>
+            <div id="tonic"></div>
+            <h6>Subdominant</h6>
+            <div id="subdominant-scale-degrees"></div>
+            <div id="subdominant"></div>
+            <h6>Dominant</h6>
+            <div id="dominant-scale-degrees"></div>
+            <div id="dominant"></div>
+          </li>
+          <li>
+            <h4>Bazual (on Trumpet)</h4>
+            <p>To perform the melody they would use this B♭ version of Deep River.</p>
+            <div id="deep-river-bb"></div>
+            <h5>Score for Create</h5>
+            <p>To compose for any of the Create conditions (for this piece), Bazual will be given this kind of score.
+            </p>
+            <div id="deep-river-bb-create"></div>
+            <h5>Chord Scale Buckets</h5>
+            <p>These are the chord scale buckets to which Bazual will be asked to limit themself</p>
+            <h6>Tonic</h6>
+            <div id="tonic-bb-scale-degrees"></div>
+            <div id="tonic-bb"></div>
+            <h6>Subdominant</h6>
+            <div id="subdominant-bb-scale-degrees"></div>
+            <div id="subdominant-bb"></div>
+            <h6>Dominant</h6>
+            <div id="dominant-bb-scale-degrees"></div>
+            <div id="dominant-bb"></div>
+          </li>
+        </ol>
+      </li>
+
+    </ol>
+  </main>
+  <section>
+    <h2>Vocabulary</h2>
+    <section>
+      <h3>Chromatic Scale</h3>
+      <p>The chromatic scale as defined here lists the 12 semitones in order from lowest to highest for a single octave.
+        Note: 5 of the 12 semitones have 2 representations: 1 that's a lower "note letter" that uses a "sharp"
+        (<code>♯</code>) and one that's a higher "note letter" that uses a "flat" (<code>♭</code>). To decide which is
+        the appropriate one to show/render, we should look at the piece of repertoire (well, particularly the
+        "transposition of the piece into the key appropriate for a given instrument") to tell whether the key signature
+        contains flats (in which case the flats are used) or not (in which case the sharps are used).</p>
+      <ol>
+        <li><code>C</code></li>
+        <li>
+          <ol>
+            <li><code>C♯</code></li>
+            <li><code>D♭</code></li>
+          </ol>
+        </li>
+        <li><code>D</code></li>
+        <li>
+          <ol>
+            <li><code>D♯</code></li>
+            <li><code>E♭</code></li>
+          </ol>
+        </li>
+        <li><code>E</code></li>
+        <li><code>F</code></li>
+        <li>
+          <ol>
+            <li><code>F♯</code></li>
+            <li><code>G♭</code></li>
+          </ol>
+        </li>
+        <li><code>G</code></li>
+        <li>
+          <ol>
+            <li><code>G♯</code></li>
+            <li><code>A♭</code></li>
+          </ol>
+        </li>
+        <li><code>A</code></li>
+        <li>
+          <ol>
+            <li><code>A♯</code></li>
+            <li><code>B♭</code></li>
+          </ol>
+        </li>
+        <li><code>B</code></li>
+      </ol>
+    </section>
+    <section id="chord-scale-buckets">
+      <h3>Chord Scale Buckets</h3>
+      <p>The chord scale buckets below are for the key of E flat (<code>Eb</code>). The <code>scale degrees</code> are
+        the pitches for a certain chord scale bucket in a given key. Note: all of these chord scale buckets span 2
+        octaves since C is the lowest "note letter" ("pitch"?) in a given octave.</p>
+      <dl>
+        <dt>tonic</dt>
+        <dd>Eb, F, G, Bb, C</dd>
+        <dt>subdominant</dt>
+        <dd>F, Ab, Bb, C, Eb</dd>
+        <dt>dominant</dt>
+        <dd>D, F, Ab, Bb, C</dd>
+      </dl>
+    </section>
+  </section>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz"
+    crossorigin="anonymous"></script>
+  <script src="https://prod.flat-cdn.com/embed-js/v1.5.1/embed.min.js"></script>
+  <script src="thick.js"></script>
+  <script>
+    const deepRiverEb = { //NOTE: right now this is a placeholder from the "original" (unsimplified version)
+      scoreId: '62ec124b77e86e00128f5ee1',
+      sharingKey: 'bb8fed0fd6d20b67fd8e2cc93f6d809122eac97377d7cdacf251579974347cbc990bc4516be5245b53cec82300cf261cf46af892be9b31ac0510176ab51cedac'
+    }
+
+    const deepRiverBb = {
+      scoreId: '62ec124a91d8e600128ceb0b',
+      sharingKey: '21f10c88735a17851972c78df5490eea1548045045cf805612b700a2ab2e61ad5468e260b0ccf552f1588a0b4f111193724eb5b60df42c432b75acfe47c02e24'
+    }
+
+
+    const drEbContainer = document.getElementById("deep-river-piccolo");
+    const drEbEmbed = new Flat.Embed(drEbContainer, {
+      "width": "100%",
+      "height": "300",
+      "score": deepRiverEb.scoreId,
+      "embedParams": {
+        "branding": false,
+        "controlsPlay": false,
+        "appId": appId,
+        "sharingKey": deepRiverEb.sharingKey
+      },
+    });
+
+    drEbEmbed.ready()
+      .then(() => drEbEmbed.getJSON())
+      // .then(r=>r.json())
+      .then((data) => {
+        console.log('reference score:', data)
+      })
+
+
+    const drEbCreateContainer = document.getElementById("deep-river-piccolo-create");
+    const drEbCreateEmbed = new Flat.Embed(drEbCreateContainer, {
+      "width": "100%",
+      "height": "400",
+      "score": deepRiverEb.scoreId,
+      "embedParams": {
+        "mode": "edit",
+        "toolsetId": NEA_CREATE_TOOLSET_ID,
+        "branding": false,
+        "controlsPlay": false,
+        "appId": appId,
+        "sharingKey": deepRiverEb.sharingKey
+      },
+    });
+
+
+    drEbCreateEmbed.ready().then(() => {
+      // should just replace all pitches with rests? is that the right number of measures already?
+      return drEbCreateEmbed.getJSON();
+    })
+      .then(pitchesToRests)
+      .then((composeScoreJSON) => {
+        return drEbCreateEmbed.loadJSON(composeScoreJSON)
+      })
+      .then(()=> drEbCreateEmbed.ready())
+      .then(()=>{
+        console.log('drEbCreateEmbed almost ready for create, needs color for measures', drEbCreateContainer)
+      })
+      .catch((err) => {
+        console.error('err in preparing drEbCreateEmbed', err)
+      })
+
+    const ebTonicBucketContainer = document.getElementById("tonic");
+    const ebTonicBucketEmbed = new Flat.Embed(ebTonicBucketContainer, {
+      "width": "100%",
+      "height": "300",
+      "score": chordScaleBucketsInEb.tonic.scoreId,
+      "embedParams": {
+        "branding": false,
+        "controlsPlay": false,
+        "appId": appId,
+        "sharingKey": chordScaleBucketsInEb.tonic.sharingKey
+      },
+    });
+
+    // ebTonicBucketEmbed.ready().then(()=>{
+    //   return ebTonicBucketEmbed.getJSON()
+    // }).then((data)=>{
+    //   console.log('ebTonicBucketEmbed data:', data)
+    //   const increasedOctave = data;
+    //   data['score-partwise'].part[0].measure.forEach(measure=>{
+    //     measure.note.forEach(note=>{
+    //       if(note.pitch){
+    //         const current = note.pitch.octave
+    //         note.pitch.octave = parseInt(current, 10) + 1+'';
+    //       }
+    //     })
+    //   })
+    //   console.log('shifted octaves up', data)
+    //   return ebTonicBucketEmbed.loadJSON(data)
+    // }).catch((err)=>{
+    //   console.error('err in ebTonicBucketEmbed', err)
+    // })
+
+    const ebSubdominantBucketContainer = document.getElementById("subdominant");
+    const ebSubdominantBucketEmbed = new Flat.Embed(ebSubdominantBucketContainer, {
+      "width": "100%",
+      "height": "300",
+      "score": chordScaleBucketsInEb.subdominant.scoreId,
+      "embedParams": {
+        "branding": false,
+        "controlsPlay": false,
+        "appId": appId,
+        "sharingKey": chordScaleBucketsInEb.subdominant.sharingKey
+      },
+    });
+
+    const ebDominantBucketContainer = document.getElementById("dominant");
+    const ebDominantBucketEmbed = new Flat.Embed(ebDominantBucketContainer, {
+      "width": "100%",
+      "height": "300",
+      "score": chordScaleBucketsInEb.dominant.scoreId,
+      "embedParams": {
+        "branding": false,
+        "controlsPlay": false,
+        "appId": appId,
+        "sharingKey": chordScaleBucketsInEb.dominant.sharingKey
+      },
+    });
+
+
+    const drBbContainer = document.getElementById("deep-river-bb");
+    const drBbEmbed = new Flat.Embed(drBbContainer, {
+      "width": "100%",
+      "height": "300",
+      "score": deepRiverBb.scoreId,
+      "embedParams": {
+        "branding": false,
+        "controlsPlay": false,
+        "appId": appId,
+        "sharingKey": deepRiverBb.sharingKey
+      },
+    });
+
+
+    const drBbCreateContainer = document.getElementById("deep-river-bb-create");
+    const drBbCreateEmbed = new Flat.Embed(drBbCreateContainer, {
+      "width": "100%",
+      "height": "400",
+      "score": deepRiverBb.scoreId,
+      "embedParams": {
+        "mode": "edit",
+        "toolsetId": NEA_CREATE_TOOLSET_ID,
+        "branding": false,
+        "controlsPlay": false,
+        "appId": appId,
+        "sharingKey": deepRiverBb.sharingKey
+      },
+    });
+
+    const bbTonicBucketContainer = document.getElementById("tonic-bb");
+    const bbTonicBucketEmbed = new Flat.Embed(bbTonicBucketContainer, {
+      "width": "100%",
+      "height": "300",
+      "score": chordScaleBucketsInEb.tonic.scoreId,
+      "embedParams": {
+        "branding": false,
+        "controlsPlay": false,
+        "appId": appId,
+        "sharingKey": chordScaleBucketsInEb.tonic.sharingKey
+      },
+    });
+
+    const bbSubdominantBucketContainer = document.getElementById("subdominant-bb");
+    const bbSubdominantBucketEmbed = new Flat.Embed(bbSubdominantBucketContainer, {
+      "width": "100%",
+      "height": "300",
+      "score": chordScaleBucketsInEb.subdominant.scoreId,
+      "embedParams": {
+        "branding": false,
+        "controlsPlay": false,
+        "appId": appId,
+        "sharingKey": chordScaleBucketsInEb.subdominant.sharingKey
+      },
+    });
+
+    const bbDominantBucketContainer = document.getElementById("dominant-bb");
+    const bbDominantBucketEmbed = new Flat.Embed(bbDominantBucketContainer, {
+      "width": "100%",
+      "height": "300",
+      "score": chordScaleBucketsInEb.dominant.scoreId,
+      "embedParams": {
+        "branding": false,
+        "controlsPlay": false,
+        "appId": appId,
+        "sharingKey": chordScaleBucketsInEb.dominant.sharingKey
+      },
+    });
+
+    drBbCreateEmbed.ready().then(() => {
+      // should just replace all pitches with rests? is that the right number of measures already?
+      return drBbCreateEmbed.getJSON();
+    })
+      .then(pitchesToRests)
+      .then((composeScoreJSON) => {
+        return drBbCreateEmbed.loadJSON(composeScoreJSON)
+      })
+      .catch((err) => {
+        console.error('err in preparing drBbCreateEmbed', err)
+      })
+
+    const tonicBucket = getChordScaleInKey('tonic', 'Eb');
+    document.getElementById('tonic-scale-degrees').innerHTML = `<output>${bucketToString(tonicBucket)}</output>`;
+
+    const subdominantBucket = getChordScaleInKey('subdominant', 'Eb');
+    document.getElementById('subdominant-scale-degrees').innerHTML = `<output>${bucketToString(subdominantBucket)}</output>`;
+
+    const dominantBucket = getChordScaleInKey('dominant', 'Eb');
+    document.getElementById('dominant-scale-degrees').innerHTML = `<output>${bucketToString(dominantBucket)}</output>`;
+
+    refToChordScaleBuckets(drBbEmbed, bbTonicBucketEmbed, bbSubdominantBucketEmbed, bbDominantBucketEmbed, {
+      tonic: document.getElementById('tonic-bb-scale-degrees'),
+      subdominant: document.getElementById('subdominant-bb-scale-degrees'),
+      dominant: document.getElementById('dominant-bb-scale-degrees')
+    })
+
+  </script>
+</body>
+
+</html>

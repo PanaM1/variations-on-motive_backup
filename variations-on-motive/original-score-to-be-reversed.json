@@ -1,0 +1,167 @@
+{
+  "score-partwise": {
+    "$version": "3.1",
+    "part-list": {
+      "score-part": [
+        {
+          "part-name": "Piano",
+          "voiceMapping": { "0": [0] },
+          "staffMapping": [
+            {
+              "mainVoiceIdx": 0,
+              "voices": [0],
+              "staffUuid": "b0488968-8d76-cf6a-5241-8fef322f953b"
+            }
+          ],
+          "voiceIdxToUuidMapping": {
+            "0": "739c33b9-96b5-8550-ed33-6e8ac0d37883"
+          },
+          "voiceUuidToIdxMapping": {
+            "739c33b9-96b5-8550-ed33-6e8ac0d37883": 0
+          },
+          "part-abbreviation": "Pno.",
+          "score-instrument": { "instrument-name": "Piano", "$id": "P1-I1" },
+          "midi-instrument": {
+            "midi-program": 1,
+            "volume": "100",
+            "$id": "P1-I1",
+            "midi-channel": "1"
+          },
+          "$id": "P1",
+          "uuid": "de8e821c-db51-9d75-a7be-248a83d3345c"
+        }
+      ]
+    },
+    "measure-list": {
+      "score-measure": [{ "uuid": "ba7a1333-f721-3a7a-9745-e052db9783d2" }]
+    },
+    "part": [
+      {
+        "measure": [
+          {
+            "note": [
+              {
+                "staff": "1",
+                "voice": "1",
+                "duration": "2",
+                "pitch": { "octave": "4", "step": "E", "alter": "-1" },
+                "$adagio-location": { "timePos": 0 },
+                "type": "quarter"
+              },
+              {
+                "staff": "1",
+                "voice": "1",
+                "duration": "1",
+                "pitch": { "octave": "4", "step": "F" },
+                "$adagio-location": { "timePos": 2 },
+                "beam": { "$number": "1", "content": "begin" },
+                "type": "eighth"
+              },
+              {
+                "staff": "1",
+                "voice": "1",
+                "duration": "1",
+                "pitch": { "octave": "4", "step": "G" },
+                "$adagio-location": { "timePos": 3 },
+                "beam": { "$number": "1", "content": "end" },
+                "type": "eighth"
+              },
+              {
+                "staff": "1",
+                "voice": "1",
+                "duration": "2",
+                "pitch": { "octave": "5", "step": "C" },
+                "$adagio-location": { "timePos": 4 },
+                "type": "quarter"
+              },
+              {
+                "staff": "1",
+                "voice": "1",
+                "duration": "2",
+                "pitch": { "octave": "4", "step": "B", "alter": "-1" },
+                "$adagio-location": { "timePos": 6 },
+                "type": "quarter"
+              }
+            ],
+            "harmony": [],
+            "$number": "1",
+            "barline": {
+              "$location": "right",
+              "bar-style": "light-heavy",
+              "$adagio-location": { "dpq": 2, "timePos": 8 },
+              "noteBefore": 4
+            },
+            "attributes": [
+              {
+                "divisions": "2",
+                "time": { "beats": "4", "beat-type": "4" },
+                "clef": { "sign": "G", "line": "2" },
+                "key": { "fifths": "-3" },
+                "staff-details": { "staff-lines": "5" },
+                "$adagio-time": { "beats": "4", "beat-type": "4" },
+                "noteBefore": -1,
+                "$adagio-location": { "timePos": 0, "dpq": 1 }
+              }
+            ],
+            "sound": [
+              {
+                "$adagio-swing": { "swing": false },
+                "noteBefore": -1,
+                "$adagio-location": { "timePos": 0, "dpq": 2 }
+              },
+              {
+                "$tempo": "80",
+                "noteBefore": -1,
+                "$adagio-location": { "timePos": 0, "dpq": 2 }
+              }
+            ],
+            "direction": [
+              {
+                "$placement": "above",
+                "staff": "1",
+                "$adagio-location": { "timePos": 0 },
+                "direction-type": {
+                  "metronome": { "per-minute": "80", "beat-unit": "quarter" }
+                },
+                "noteBefore": -1,
+                "$adagio-isFirst": true
+              }
+            ],
+            "$adagio-beatsList": [1, 1, 1, 1]
+          }
+        ],
+        "$id": "P1",
+        "uuid": "de8e821c-db51-9d75-a7be-248a83d3345c"
+      }
+    ],
+    "defaults": {
+      "scaling": { "millimeters": "7", "tenths": "40" },
+      "page-layout": {
+        "page-height": "1596.5714285714287",
+        "page-width": "1233.7142857142858",
+        "page-margins": {
+          "$type": "both",
+          "top-margin": "38.857142857142854",
+          "bottom-margin": "38.857142857142854",
+          "left-margin": "38.857142857142854",
+          "right-margin": "38.857142857142854"
+        }
+      },
+      "system-layout": { "system-distance": "115.2" },
+      "staff-layout": { "staff-distance": "72.57142857142857" },
+      "$adagio-measureNumberingStart": 1,
+      "word-font": { "$font-family": "Century Schoolbook L" },
+      "$adagio-systemBreakPolicy": {
+        "maxNbMeasuresPerLine": 4,
+        "forbiddenCounts": {}
+      }
+    },
+    "$adagio-formatVersion": 55,
+    "credit": [{ "credit-type": "title", "credit-words": "Motive" }],
+    "work": { "work-title": "Motive" },
+    "identification": {
+      "encoding": { "software": "Flat", "encoding-date": "2023-08-25" },
+      "source": "https://flat.io/score/647e0639e9e8c299af2e5799-motive?sharingKey=1af986d74ed7d96068815dc7c797acdc9dacc9ebd9684c0b2cda38be7c4b09f5190de3bf06b26b3d29af45f79f4939ed8532ae8107d796a47d7f7f1dc8c95009"
+    }
+  }
+}
